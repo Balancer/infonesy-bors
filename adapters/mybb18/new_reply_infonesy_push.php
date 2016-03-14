@@ -2,7 +2,13 @@
 
 if(!defined('COMPOSER_ROOT'))
 {
-	define('COMPOSER_ROOT', $_SERVER['DOCUMENT_ROOT'].'/composer');
+	if(is_dir($d = $_SERVER['DOCUMENT_ROOT'].'/../composer'))
+		define('COMPOSER_ROOT', $d);
+	elseif(is_dir($d = $_SERVER['DOCUMENT_ROOT'].'/composer'))
+		define('COMPOSER_ROOT', $d);
+	else
+		return NULL;
+
 	require COMPOSER_ROOT.'/vendor/autoload.php';
 	require_once COMPOSER_ROOT.'/config.php';
 }
@@ -85,31 +91,31 @@ function new_reply_infonesy_push_postbit(&$post)
 
 	if($mybb->input['action'] != 'thread')
 	{
-		file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-postbit-mybb-input.txt', print_r($mybb->input, true), FILE_APPEND);
-		file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-postbit-post.txt', print_r($post, true), FILE_APPEND);
+		@file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-postbit-mybb-input.txt', print_r($mybb->input, true), FILE_APPEND);
+		@file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-postbit-post.txt', print_r($post, true), FILE_APPEND);
 	}
 
 	if($mybb->input['action'] != 'do_newreply')
 	{
 		if($mybb->input['action'] != 'thread')
-		file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-postbit-actions.txt', print_r($mybb->input, true), FILE_APPEND);
+		@file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-postbit-actions.txt', print_r($mybb->input, true), FILE_APPEND);
 		return;
 	}
 
-	file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-do_newreply-mybb-input.txt', print_r($mybb->input, true));
-	file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-do_newreply-mybb.txt', print_r($mybb, true));
-	file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-do_newreply-post.txt', print_r($post, true));
+	@file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-do_newreply-mybb-input.txt', print_r($mybb->input, true));
+	@file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-do_newreply-mybb.txt', print_r($mybb, true));
+	@file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-do_newreply-post.txt', print_r($post, true));
 
 	$storage = $GLOBALS['mybb_infonesy']['push_dir'];
 
 	$file = $storage.'/'.date('Ymd-His').'--post-'.$post['pid'].'.md';
 
-	file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/file.txt', $file);
+	@file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/file.txt', $file);
 
 	$meta = [
-		'UUID'	  => 'tk.unlimit-talks.post.'.$post['pid'],
-		'Node'	  => 'tk.unlimit-talks',
-		'TopicUUID' => 'tk.unlimit-talks.topic.'.$post['tid'],
+		'UUID'	  => $GLOBALS['mybb_infonesy']['post_uuid_base'].$post['pid'],
+		'Node'	  => $GLOBALS['mybb_infonesy']['node_uuid'],
+		'TopicUUID' => $GLOBALS['mybb_infonesy']['topic_uuid_base'].$post['tid'],
 //		'Title' => '',
 	];
 
@@ -119,7 +125,7 @@ function new_reply_infonesy_push_postbit(&$post)
 	$meta = array_merge($meta, [
 		'Author'	=> $post['username'],
 		'AuthorEmailMD5'	=> md5($post['email']),
-		'AuthorUUID'=> 'tk.unlimit-talks.user.'.$post['uid'],
+		'AuthorUUID'=> $GLOBALS['mybb_infonesy']['user_uuid_base'].$post['uid'],
 		'Date'	  => date('r', $post['dateline']),
 		'Type'	  => 'Post',
 		'Markup'	=> 'bbcode.mybb',
@@ -143,21 +149,21 @@ function new_reply_infonesy_push_post_insert(&$post)
 {
 	global $settings, $mybb, $lang, $templates;
 
-	file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-post_insert-mybb-input.txt', print_r($mybb->input, true), FILE_APPEND);
-	file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-post_insert-post.txt', print_r($post, true), FILE_APPEND);
+	@file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-post_insert-mybb-input.txt', print_r($mybb->input, true), FILE_APPEND);
+	@file_put_contents($_SERVER['DOCUMENT_ROOT'].'/cache/dump-post_insert-post.txt', print_r($post, true), FILE_APPEND);
 
 	$data = [
-		'UUID'	  => 'tk.unlimit-talks.post.'.$post->pid,
-		'Node'	  => 'tk.unlimit-talks',
-		'TopicUUID' => 'tk.unlimit-talks.topic.'.$post->data['tid'],
+		'UUID'	  => $GLOBALS['mybb_infonesy']['post_uuid_base'].$post->pid,
+		'Node'	  => $GLOBALS['mybb_infonesy']['node_uuid'],
+		'TopicUUID' => $GLOBALS['mybb_infonesy']['topic_uuid_base'].$post->data['tid'],
 		'Author'	=> $post->data['username'],
 		'AuthorEmailMD5'	=> md5($mybb->user['email']),
-		'AuthorUUID'=> 'tk.unlimit-talks.user.'.$mybb->user['uid'],
+		'AuthorUUID'=> $GLOBALS['mybb_infonesy']['user_uuid_base'].$mybb->user['uid'],
 		'Date'	  => date('r', $post->data['dateline']),
 		'Type'	  => 'Post',
 		'Markup'	=> 'bbcode.mybb',
 		'Message' => $post->data['message'],
-		'AnswerTo' => 'tk.unlimit-talks.post.'.$post->data['replyto'],
+		'AnswerTo' => $GLOBALS['mybb_infonesy']['post_uuid_base'].$post->data['replyto'],
 	];
 
 	infonesy_export_post($post->pid, $data);
