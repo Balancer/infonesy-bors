@@ -5,6 +5,7 @@
 ## Ссылки
 
 * [Проект Infonesy](https://github.com/Balancer/infonesy) — распределённая социальная метасистема.
+* [Основной код на Bitbucket](https://bitbucket.org/Balancer/infonesy-bors).
 
 ## Планируется поддержка:
 
