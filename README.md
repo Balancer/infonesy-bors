@@ -15,6 +15,6 @@
 * [FluxBB](http://fluxbb.org/) — базовый упрощённый функционал. Демо на [fluxbb.ams.wrk.ru](http://fluxbb.ams.wrk.ru/) (сейчас не работает)
 
 ### Изучается возможность взаимодействия с:
-* [Anahita CMS](https://www.getanahita.com/) [Демо](http://anahita.works.home.balancer.ru/) — без регистрации ничего на главной увидеть нельзя, что минус.
-* [LiveStreet CMS](http://livestreetcms.ru/) [Демо](http://ls.balancer.ru/)
+* [Anahita CMS](https://www.getanahita.com/) — [Демо](http://anahita.works.home.balancer.ru/) — без регистрации ничего на главной увидеть нельзя, что минус.
+* [LiveStreet CMS](http://livestreetcms.ru/) —  [Демо](http://ls.balancer.ru/)
 * [Retroshare](http://retroshare.sourceforge.net/) — пока абсолютно непонятно, как с ней работать через cli или API
