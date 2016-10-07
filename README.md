@@ -13,6 +13,7 @@
 * [Vanilla](https://vanillaforums.org/). Демо на [vanilla.docker.home.balancer.ru](http://vanilla.docker.home.balancer.ru/). Трансляция не идёт.
 * [Flarum](http://flarum.org/) — демо на [flarum.ultimon.wrk.ru](http://flarum.ultimon.wrk.ru/) (разовые тестовые трансляции)
 * [FluxBB](http://fluxbb.org/) — базовый упрощённый функционал. Демо на [fluxbb.ams.wrk.ru](http://fluxbb.ams.wrk.ru/). Живой трансляции нет.
+* [ZeroNet](http://zeronet.io) — на стадии разработки. Почитать о ходе работ можно в ZeroNet по адресу [1BpFtPez7mSiShtXfb4wPfMT1dZTuRybfZ/?Topic:2_1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw](https://proxy1.zn.kindlyfire.me/1BpFtPez7mSiShtXfb4wPfMT1dZTuRybfZ/?Topic:2_1PniNzyi8fygvwyBaLpA9oBDVWZ5fXuJUw)
 
 ### Изучается возможность взаимодействия с:
 * [Anahita CMS](https://www.getanahita.com/) — [Демо](http://anahita.works.home.balancer.ru/) — без регистрации ничего на главной увидеть нельзя, что минус.
