@@ -9,12 +9,12 @@
 
 ## Пакеты драйверов в отдельных репозиториях под Composer, в стадии разработки
 
-### Форумы
+### Драйвера форумов
 
 - [Vanilla Forums](https://github.com/Balancer/infonesy-driver-vanilla) — стадия ранней разработки
 - [Flarum](https://github.com/Balancer/infonesy-driver-flarum) — стадия ранней разработки
 
-### Транспорт
+### Драйвера транспорта
 
 - [FileSync](https://github.com/Balancer/infonesy-transport-filesync) — обмен данными через BTSync, Syncthing и т.п.
 
