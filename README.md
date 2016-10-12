@@ -31,3 +31,7 @@
 * [Anahita CMS](https://www.getanahita.com/) — [Демо](http://anahita.works.home.balancer.ru/) — без регистрации ничего на главной увидеть нельзя, что минус.
 * [LiveStreet CMS](http://livestreetcms.ru/) —  [Демо](http://ls.balancer.ru/)
 * [Retroshare](http://retroshare.sourceforge.net/) — пока абсолютно непонятно, как с ней работать через cli или API
+
+## Поддержка отложена надолго:
+
+- [phpBB3 (демосайт Infonesy)](http://phpbb3.infonesy.tk/) — из-за [крайней кривости движка](http://phpbb3.infonesy.tk/viewtopic.php?f=2&t=2).
