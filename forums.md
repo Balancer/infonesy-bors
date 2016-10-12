@@ -39,3 +39,10 @@ TangoBB         |        5 |     441 |         2 |          | нет      |     
 - Такая же беда с расширениями. Всё ручками, ручками... Даже сложно представить, почему этот убогий движок до сих пор так популярен :)
 - Поддержки Markdown нет и, возможно, не предвидится вообще.
 - Есть поддержка уймы БД, в т.ч. SQLite
+
+## Изучить по обзорам
+
+- http://hellboundbloggers.com/2010/05/free-open-source-forums-6892/
+- http://www.etechtricks.com/top-4-best-free-open-source-forum-bulletin-board/
+- http://www.trixhub.com/best-open-source-forum-php-scripts/
+- https://www.mkyong.com/featured/top-10-open-source-forums-in-my-collection/
