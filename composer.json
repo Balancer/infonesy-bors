@@ -1,0 +1,20 @@
+{
+	"name": "balancer/infonesy-bors",
+	"type": "library",
+	"description": "Infonesy object templates",
+	"keywords": ["php", "library", "infonesy", "bors"],
+
+	"license": "GPL-3.0",
+	"authors": [
+		{
+			"name": "Roman =Balancer= Karshiev",
+			"email": "balancer@balancer.ru"
+		}
+	],
+
+	"autoload": {
+		"psr-4": {
+			"Infonesy\\": "src/"
+		}
+	}
+}
