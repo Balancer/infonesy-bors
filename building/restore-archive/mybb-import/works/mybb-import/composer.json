@@ -1,0 +1,12 @@
+{
+    "require": {
+        "symfony/yaml": "*",
+        "respect/relational": "*"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "B2\\": "src"
+        }
+    }
+}

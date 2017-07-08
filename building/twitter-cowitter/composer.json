@@ -1,0 +1,6 @@
+{
+    "require": {
+        "mpyw/cowitter": "^1.0",
+        "tracy/tracy": "^2.4"
+    }
+}

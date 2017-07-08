@@ -1,0 +1,4 @@
+syntax: regexp
+
+^vendor/
+composer.lock

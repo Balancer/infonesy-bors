@@ -1,0 +1,38 @@
+{
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+
+
+	"repositories": [
+    	{ "type": "composer", "url": "https://asset-packagist.org" },
+        { "type": "vcs", "url": "/home/balancer/Works/repos/airbase-bors" },
+        { "type": "vcs", "url": "/home/balancer/Works/repos/b2-framework" },
+        { "type": "vcs", "url": "/home/balancer/Works/repos/b2-lcml" },
+        { "type": "vcs", "url": "/home/balancer/Works/repos/balancer-board-bors" },
+        { "type": "vcs", "url": "/home/balancer/Works/repos/balancer-site-lineage" },
+        { "type": "vcs", "url": "/home/balancer/Works/repos/bors-3rd-bootstrap3" },
+        { "type": "vcs", "url": "/home/balancer/Works/repos/bors-3rd-jquery-wysibb" },
+        { "type": "vcs", "url": "/home/balancer/Works/repos/bors-core" },
+        { "type": "vcs", "url": "/home/balancer/Works/repos/bors-ext" },
+        { "type": "vcs", "url": "/home/balancer/Works/repos/infonesy-driver-flarum" },
+        { "type": "vcs", "url": "/home/balancer/Works/repos/infonesy-transport-filesync" },
+        { "type": "vcs", "url": "/home/balancer/Works/repos/pfs-bors" },
+        { "type": "vcs", "url": "/home/balancer/Works/repos/pfs-admin-bors" }
+
+	],
+
+    "require": {
+		"balancer/infonesy-driver-flarum": "*",
+		"balancer/infonesy-transport-filesync": "*",
+        "balancer/bors-ext": "*",
+        "jlogsdon/cli": "*"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Airbase\\": "src/Airbase/",
+            "Bal\\": "src/Bal/",
+            "B2\\": "src/B2/"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "autoload": {
+        "psr-4": {
+            "B2\\": "src"
+        }
+    },
+    "require": {
+        "polem/slack-notifier": "*",
+        "maknz/slack": "*",
+        "cleentfaar/slack": "*",
+        "frlnc/php-slack": "*"
+    }
+}
